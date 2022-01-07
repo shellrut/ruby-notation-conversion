@@ -1,62 +1,62 @@
 #!/usr/bin/ruby
 
-#-----------------------------------------------#									
+#--------------------------------------------------#									
 #	Developer -- Shelby Rutland					
 #	Date ------- March 15, 2021					
 #												
 #	This Ruby program converts expressions		
 #	from postfix notation to infix notation.	
-#-----------------------------------------------#
+#--------------------------------------------------#
 
-#-----------------------------------------------#
+#--------------------------------------------------#
 #	Stack										
 #												
 #	This class represents the stack and			
 #	includes methods for the fundamental stack	
 #	operations: push, pop, and isEmpty.			
-#-----------------------------------------------#
+#--------------------------------------------------#
 
-#class to represent the stack
+# Class to represent the stack
 class Stack
-	#initialize the stack
+	# Initialize the stack
 	def initialize
 		@data = []
 		@head = -1
 	end
-	#fundamental stack operation: push method
+	# Push method
 	def push value
 		@data << value
 		@head += 1
 	end
-	#fundamental stack operation: pop method
+	# Pop method
 	def pop
 		result = @data[@head]
 		@data.delete_at(@head)
 		@head -= 1
 		result
 	end
-	#fundamental stack operation: isEmpty method
+	# isEmpty method
 	def isEmpty
 		@head == -1
 	end
 end
 
-#-----------------------------------------------#
+#--------------------------------------------------#
 #	main program								
 #												
 #	The main program will prompt the user for	
 #	the names of the input and output files,	
 #	read each expression in the input file,		
 #	perform the conversion, and write the		
-#	resulting infix expressions to an			
-#	output file.								
+#	resulting infix expressions to an output
+#	file.								
 #												
 #	If the input file contains too many			
 #	operators or operands, the program won't	
 #	complete the conversion, but instead will	
-#	output an error message with the ill-formed	
-#	postfix expression.							
-#-----------------------------------------------#
+#	output an error message with the
+#	ill-formed postfix expression.							
+#--------------------------------------------------#
 
 def main
 	print "Input filename: "
